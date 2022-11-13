@@ -17,7 +17,7 @@ client = Cloudant.iam('55a4f815-9a4a-4711-b663-d2733b89f3f9-bluemix','Ga7SGlD639
 # Create a database using an initialized client
 my_database = client.create_database('ibm-deeplearning')
 if my_database.exists():
-    print("Database '{0}' successfully created.".format('my_db'))
+    print("Database '{0}' successfully created.".format('ibm-deeplearning'))
 # default home page or route
 @app.route('/')
 def index():
