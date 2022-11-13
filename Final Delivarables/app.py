@@ -9,13 +9,13 @@ import requests
 from flask import Flask, request, render_template, redirect, url_for
 from cloudant.client import Cloudant
 
-model = load_model(r"Updated-xception-diabetic-retinopathy.h5")
+model = load_model(r"model\Updated-xception-diabetic-retinopathy.h5")
 
 app = Flask(__name__)
 # Authenticate using an IAM API key
-client = Cloudant.iam('367e91e7-6150-4f63-92f4-24625af53457-bluemix','EqKm5BOKxzGLIm9YsFnXKJ66ywOyL9tDVK9oN0_FPD4G', connect=True)
+client = Cloudant.iam('55a4f815-9a4a-4711-b663-d2733b89f3f9-bluemix','Ga7SGlD639xERt-F6egdft3j2dNntgT5CelqppKEgSLp', connect=True)
 # Create a database using an initialized client
-my_database = client.create_database('my_db')
+my_database = client.create_database('ibm-deeplearning')
 if my_database.exists():
     print("Database '{0}' successfully created.".format('my_db'))
 # default home page or route
