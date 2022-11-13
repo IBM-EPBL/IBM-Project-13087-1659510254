@@ -29,7 +29,7 @@
     </div>
 
     <main class="form-signin">
-    <form method="POST">
+    <form action="{{ url_for('afterlogin') }}" method="POST">
         <div class="form-floating">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="emailid">
             <label for="floatingInput"> Registered Email Address </label>
@@ -39,6 +39,7 @@
             <label for="floatingPassword"> Password </label>
         </div>
         <button class="w-100 btn btn-lg btn-secondary" type="submit"> Login </button>
+        <a class="page" href="#">{{pred}}</a><br>
     </form>
     </main>
 

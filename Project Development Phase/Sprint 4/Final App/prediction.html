@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Prediciton </title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
     <link href="css/prediction.css" rel="stylesheet">
 </head>
 <body class="text-center">
@@ -23,14 +23,17 @@
             </ul>
         </div>
     </div>
-
+    <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
     <div class="mb-3">
+        
         <label for="formFile" class="form-label"> Please select an retina image in a formate of .png , .jpg , .jpeg </label>
         <input class="form-control" id="formFile" type="file" name="image"/>
-        <button class="btn btn-md btn-secondary" id="subBtn" type="submit"> Submit </button>
+        <button class="btn btn-md btn-secondary" id="subBtn" type="submit" value="predict"> Submit </button>
         <p> The result will be shown below once the image is uploaded </p>
-        <h2 id="result"> SUCCESS </h2>
+        <h3 class="container justify-content-center">{{ pred }}</h3>
+        
     </div>
+    </form>
 
 </body>
 </html>
