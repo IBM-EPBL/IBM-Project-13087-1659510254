@@ -24,16 +24,15 @@
         </div>
     </div>
     <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
-    <div class="mb-3">
-        
+    <div id="formContainer">
         <label for="formFile" class="form-label"> Please select an retina image in a formate of .png , .jpg , .jpeg </label>
         <input class="form-control" id="formFile" type="file" name="image"/>
-        <button class="btn btn-md btn-secondary" id="subBtn" type="submit" value="predict"> Submit </button>
+        <button class="btn btn-md btn-secondary" id="subBtn" type="submit" value="predict" onload="color()"> Submit </button>
         <p> The result will be shown below once the image is uploaded </p>
-        <h3 class="container justify-content-center">{{ pred }}</h3>
-        
+        <h3 id="result" {{color}} value="{{ pred }}"> {{ pred }} </h3>
     </div>
     </form>
+    <img src="{{ url_for('static', filename='prediction.jpg') }}" alt="Diabetic Retinopathy Severity">
 
 </body>
 </html>

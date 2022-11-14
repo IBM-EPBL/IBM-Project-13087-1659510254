@@ -46,6 +46,10 @@ body {
     color: #f3f4f5;
 }
 
+#formContainer {
+    padding-right: 2.5rem;
+}
+
 #subBtn {
     width: 35%;
     border-radius: .75rem;
@@ -58,4 +62,8 @@ body {
 
 #result {
     padding-top: .75rem;
+}
+
+img {
+    width: 45%;
 }
