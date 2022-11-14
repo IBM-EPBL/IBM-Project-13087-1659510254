@@ -10,7 +10,7 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.inception_v3 import preprocess_input
 
 
-model = load_model(r"Updated-xception-diabetic-retinopathy.h5")
+model = load_model(r"model\Updated-xception-diabetic-retinopathy.h5")
 
 app = Flask(__name__)
 
@@ -87,7 +87,6 @@ def login():
     return render_template('login.html')
 
 
-
 @app.route('/afterlogin', methods=['POST'])
 def afterlogin():
 
@@ -141,7 +140,19 @@ def predict():
 
     res = str(index[prediction[0]])
 
-    return render_template('prediction.html',pred=res)
+    color = ''
+    if res == 'No Diabetic Retinopathy':
+        color = 'style=color:#86c881'
+    elif res == 'Mild Diabetic Retinopathy':
+        color = 'style=color:yellow'
+    elif res == 'Moderate Diabetic Retinopathy':
+        color = 'style=color:orange'
+    elif res == 'Severe Diabetic Retinopathy':
+        color = 'style=color:#ff5500'
+    else:
+        color = 'style=color:#a00000'
+
+    return render_template('prediction.html',pred=res,color = color)
 
 if __name__ == "__main__":
     app.run(debug=False)
