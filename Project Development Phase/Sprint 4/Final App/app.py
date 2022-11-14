@@ -10,7 +10,7 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.inception_v3 import preprocess_input
 
 
-model = load_model(r"Updated-xception-diabetic-retinopathy.h5")
+model = load_model(r"model\Updated-xception-diabetic-retinopathy.h5")
 
 app = Flask(__name__)
 
@@ -39,7 +39,7 @@ def home():
 
 @app.route('/')
 def index():
-    return render_template('register.html')
+    return render_template('login.html')
 
 #registration page
 @app.route('/register')

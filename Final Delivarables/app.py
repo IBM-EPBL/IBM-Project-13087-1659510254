@@ -39,7 +39,7 @@ def home():
 
 @app.route('/')
 def index():
-    return render_template('register.html')
+    return render_template('login.html')
 
 #registration page
 @app.route('/register')
